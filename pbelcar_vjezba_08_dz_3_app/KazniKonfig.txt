@@ -1,0 +1,4 @@
+#NWTiS 2024.
+#Mon May 06 15:30:10 CEST 2024
+adresaKazne=localhost
+mreznaVrataKazne=8020

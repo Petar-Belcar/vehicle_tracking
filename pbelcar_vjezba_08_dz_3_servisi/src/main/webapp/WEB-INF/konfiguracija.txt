@@ -1,0 +1,10 @@
+app.radari.adresa=20.24.5.2
+app.radari.mreznaVrata=8000
+#
+app.vozila.adresa=20.24.5.2
+app.vozila.mreznaVrata=8001
+#
+app.kazne.adresa=20.24.5.2
+app.kazne.mreznaVrata=8020
+#
+webservis.klijenti.nadzor.baseuri=http://20.24.5.3:8080/pbelcar_vjezba_08_dz_3_klijenti/mvc/

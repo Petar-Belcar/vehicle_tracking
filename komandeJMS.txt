@@ -1,0 +1,5 @@
+./asadmin --user admin create-jmsdest --desttype queue jms_nwtis2024
+
+./asadmin --user admin create-jms-resource --restype jakarta.jms.ConnectionFactory jms/nwtisCF
+
+./asadmin --user admin create-jms-resource --restype jakarta.jms.Queue jms/nwtisQ

@@ -1,0 +1,25 @@
+# Kreiraj network
+docker network create --subnet=20.24.5.0/24 nwtis_dz_2n
+
+# Ispect kreiranog networka
+docker network inspect nwtis_dz_2n
+
+# Kreiranje voluma
+docker volume create nwtis_hsql_dz_2v
+
+# Inspect voluma
+docker volume inspect nwtis_hsql_dz_2v
+
+# Pokretanje konteinera
+docker run -it -d --network=nwtis_dz_2n --ip 20.24.5.3 \
+-p 9001:9001 \ // Should not be here, simply here for ease of testing
+--name=nwtis_hsql_dz_2c --hostname=nwtis_hsql_dz_2c \
+--mount source=nwtis_hsql_dz_2v,target=/usr/data \
+nwtis_hsql_dz_2i:latest
+
+# Pokretanje H2
+docker run -it -d --network=nwtis_dz_2n --ip 20.24.5.4 \
+-p 9092:9092 \
+--name=nwtis_h2_dz_2c --hostname=nwtis_h2_dz_2c \
+--mount source=nwtis_h2_dz_2v,target=/opt/database \
+nwtis_h2_dz_2i:latest

@@ -1,0 +1,3 @@
+GRANT SELECT, UPDATE, INSERT ON TABLE kazne TO 'aplikacija';
+
+

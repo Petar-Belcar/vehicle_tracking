@@ -1,0 +1,17 @@
+FROM payara/server-full:6.2024.5-jdk21
+
+EXPOSE 8080
+EXPOSE 4848
+
+WORKDIR /app
+
+# COPY pbelcar_vjezba_08_dz_3_servisi/NWTiS_REST_1.txt /app/NWTiS_REST_1.txt
+# COPY pbelcar_vjezba_08_dz_3_servisi/NWTiS_REST_K.txt /app/NWTiS_REST_K.txt
+# COPY pbelcar_vjezba_08_dz_3_servisi/NWTiS_REST_R.txt /app/NWTiS_REST_R.txt
+# COPY pbelcar_vjezba_08_dz_3_servisi/NWTiS_REST_S.txt /app/NWTiS_REST_S.txt
+# COPY pbelcar_vjezba_08_dz_3_servisi/NWTiS_REST_V.txt /app/NWTiS_REST_V.txt
+# COPY docker-entrypoint.servisi.sh /app/script.sh
+
+COPY payara_PreBootCommands.txt $CONFIG_DIR/pre-boot-commands.asadmin
+COPY pbelcar_vjezba_08_dz_3_klijenti/target/pbelcar_vjezba_08_dz_3_klijenti-1.1.0.war $DEPLOY_DIR/pbelcar_vjezba_08_dz_3_klijenti.war
+COPY pbelcar_vjezba_08_dz_3_servisi/target/pbelcar_vjezba_08_dz_3_servisi-1.1.0.war $DEPLOY_DIR/pbelcar_vjezba_08_dz_3_servisi.war

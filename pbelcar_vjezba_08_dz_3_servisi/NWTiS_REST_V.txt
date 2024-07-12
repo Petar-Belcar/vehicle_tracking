@@ -1,0 +1,17 @@
+#NWTiS 2024.
+#Thu Mar 07 10:23:41 CET 2024
+#
+#
+adresaVozila=20.24.5.2
+mreznaVrataVozila=8001
+#
+#
+korisnickoImeBazaPodataka=nwtis_2
+lozinkaBazaPodataka=nwtis#2
+#
+# podaci za HSQLDB (trenutno se koristi)
+urlBazaPodataka=jdbc:hsqldb:hsql://20.24.5.3:9001/nwtis_2
+upravljacBazaPodataka=org.hsqldb.jdbcDriver
+# podaci za H2 (ako se koristi H2 maknuti komentar # u 2 linije ispod i staviti komentar # na 2 linije iznad kod HSQLDB)
+#urlBazaPodataka=jdbc:h2:tcp://20.24.5.3/nwtis_2
+#upravljacBazaPodataka=org.h2.Driver

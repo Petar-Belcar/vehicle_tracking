@@ -1,0 +1,40 @@
+server:
+    port: 7070
+javax:
+    sql:
+        DataSource:
+            nwtis:
+# ovo je stvarni naziv koji se koristi s H2            
+                dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+                dataSource:
+                    url: jdbc:h2:tcp://20.24.5.4:9092/nwtis_2
+                    user: nwtis_2
+                    password: nwtis#2
+            h2:
+# služi kao primjer za H2           
+                dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+                dataSource:
+                    url: jdbc:h2:tcp://20.24.5.4:9092/nwtis_2
+                    user: nwtis_2
+                    password: nwtis#2
+            hsqldb:
+# NE KORISTI SE - služi kao primjer za HSQLDB
+                dataSourceClassName: org.hsqldb.jdbc.JDBCDataSource
+                dataSource:
+                    url: jdbc:hsqldb:hsql://20.24.5.3:9001/nwtis_2
+                    user: nwtis_2
+                    password: nwtis#2
+app:
+    radari:
+         adresa: 20.24.5.2
+         mreznaVrata: 8000 
+    vozila:
+         adresa: 20.24.5.2
+         mreznaVrata: 8001                   
+    kazne:
+         adresa: 20.24.5.2
+         mreznaVrata: 8020
+webservis:
+    klijenti:
+         nadzor:
+              baseuri: http://20.24.5.3:8080/pbelcar_vjezba_08_dz_3_klijenti/mvc/

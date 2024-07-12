@@ -1,0 +1,47 @@
+cd /opt/payara6-web/glassfish/bin
+
+# HSQLDB baza podataka
+
+./asadmin --user admin create-jdbc-connection-pool --datasourceclassname org.hsqldb.jdbc.JDBCDataSource\
+ --restype javax.sql.DataSource\
+ --property Password=nwtis#1:User=nwtis_1:url="jdbc\:hsqldb\:hsql\://localhost\:9001/nwtis_1"\
+ nwtis_hsqldb_pool
+
+./asadmin --user admin ping-connection-pool nwtis_hsqldb_pool
+  
+# Brisanje - ako je potebno obrisati #
+#./asadmin --user admin delete-jdbc-connection-pool nwtis_hsqldb_pool
+  
+./asadmin --user admin list-jdbc-connection-pools
+  
+./asadmin --user admin create-jdbc-resource --connectionpoolid nwtis_hsqldb_pool jdbc/nwtis_hsqldb
+
+# Brisanje - ako je potebno obrisati #
+#./asadmin --user admin delete-jdbc-resource jdbc/nwtis_hsqldb
+
+./asadmin --user admin list-jdbc-resources
+
+# H2 baza podataka
+
+./asadmin --user admin create-jdbc-connection-pool --datasourceclassname org.h2.jdbcx.JdbcDataSource\
+ --restype javax.sql.DataSource\
+ --property Password=nwtis#2:User=nwtis_2:url="jdbc\:h2\:tcp\://localhost/nwtis_2"\
+ nwtis_h2_pool
+
+./asadmin --user admin ping-connection-pool nwtis_h2_pool
+  
+# Brisanje - ako je potebno obrisati #
+#./asadmin --user admin delete-jdbc-connection-pool nwtis_h2_pool
+  
+./asadmin --user admin list-jdbc-connection-pools
+  
+./asadmin --user admin create-jdbc-resource --connectionpoolid nwtis_h2_pool jdbc/nwtis_h2
+
+# Brisanje - ako je potebno obrisati #
+#./asadmin --user admin delete-jdbc-resource jdbc/nwtis_h2
+
+
+
+
+
+

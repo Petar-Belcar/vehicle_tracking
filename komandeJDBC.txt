@@ -1,0 +1,21 @@
+cd /opt/payara6-web/glassfish/bin
+
+./asadmin --user admin create-jdbc-connection-pool --datasourceclassname org.hsqldb.jdbc.JDBCDataSource --restype javax.sql.DataSource --property PortNumber=9001:Password=nwtis#2:User=nwtis_1:url="jdbc\:hsqldb\:hsql\://localhost\:9001/nwtis_2" nwtis_hsqldb_pool
+ 
+./asadmin --user admin ping-connection-pool nwtis_hsqldb_pool
+  
+./asadmin --user admin delete-jdbc-connection-pool --cascade=true nwtis_hsqldb_pool
+
+./asadmin --user admin list-jdbc-connection-pools
+
+./asadmin --user admin create-jdbc-resource --connectionpoolid nwtis_hsqldb_pool jdbc/nwtis_hsqldb
+
+./asadmin --user admin create-jdbc-connection-pool --datasourceclassname org.h2.jdbcx.JdbcDataSource --restype  javax.sql.DataSource --property Password=nwtis#2:User=nwtis_2:url="jdbc\:h2\:tcp\://localhost\:9092/nwtis_2" nwtis_h2_pool
+
+./asadmin --user admin ping-connection-pool nwtis_h2_pool
+  
+./asadmin --user admin delete-jdbc-connection-pool --cascade=true nwtis_h2_pool
+  
+./asadmin --user admin list-jdbc-connection-pools
+
+./asadmin --user admin create-jdbc-resource --connectionpoolid nwtis_h2_pool jdbc/nwtis_h2

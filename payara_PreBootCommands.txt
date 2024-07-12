@@ -1,0 +1,13 @@
+# JDBC stvari
+
+create-jdbc-connection-pool --datasourceclassname org.h2.jdbcx.JdbcDataSource --restype  javax.sql.DataSource --property Password=nwtis#2:User=nwtis_2:url="jdbc\:h2\:tcp\://20.24.5.4\:9092/nwtis_2" nwtis_h2_pool
+
+create-jdbc-resource --connectionpoolid nwtis_h2_pool jdbc/nwtis_h2
+
+# JMS stvari
+
+create-jmsdest --desttype queue jms_nwtis2024
+
+create-jms-resource --restype jakarta.jms.ConnectionFactory jms/nwtisCF
+
+create-jms-resource --restype jakarta.jms.Queue jms/nwtisQ

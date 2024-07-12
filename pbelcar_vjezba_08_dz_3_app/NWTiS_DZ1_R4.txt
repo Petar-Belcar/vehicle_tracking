@@ -1,0 +1,14 @@
+#NWTiS 2024.
+#Thu Mar 07 10:23:41 CET 2024
+id=4
+adresaRegistracije=20.24.5.2
+mreznaVrataRegistracije=8000
+mreznaVrataRadara=8013
+adresaKazne=20.24.5.2
+mreznaVrataKazne=8020
+maksBrzina=23
+maksTrajanje=7
+maksUdaljenost=70
+adresaRadara=Anina 14, 42000 Varaždin
+gpsSirina=46.30465
+gpsDuzina=16.34145

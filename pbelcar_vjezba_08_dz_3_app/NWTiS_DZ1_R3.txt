@@ -1,0 +1,14 @@
+#NWTiS 2024.
+#Thu Mar 07 10:23:41 CET 2024
+id=3
+adresaRegistracije=20.24.5.2
+mreznaVrataRegistracije=8000
+mreznaVrataRadara=8012
+adresaKazne=20.24.5.2
+mreznaVrataKazne=8020
+maksBrzina=23
+maksTrajanje=7
+maksUdaljenost=70
+adresaRadara=Zagrebačka 34, 42000 Varaždin
+gpsSirina=46.30172
+gpsDuzina=16.33881

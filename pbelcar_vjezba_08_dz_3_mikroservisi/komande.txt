@@ -1,0 +1,13 @@
+cd /opt/hsqldb-2.7.2/hsqldb/data
+sudo java -classpath ../lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:nwtis_2 --dbname.0 nwtis_2 --port 9001
+
+sudo java -Dfile.encoding=UTF-8 -cp /opt/h2/bin/h2-2.2.224.jar org.h2.tools.Server -tcp -tcpAllowOthers -webAllowOthers -baseDir /opt/database -ifNotExists
+
+curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"id": "1", "vrijemePocetak": "1711348009", "vrijemeKraj": "1711368009", "brzina": "21.767", "gpsSirina": "46.286608", "gpsDuzina": "16.353131", "gpsSirinaRadar": "46.286602", "gpsDuzinaRadar": "16.353136"}' "http://localhost:7070/nwtis/v1/api/kazne"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/nwtis/v1/api/kazne"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/nwtis/v1/api/kazne/1"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/nwtis/v1/api/kazne/2"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/nwtis/v1/api/kazne?od=1711368000&do=1711369000"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/nwtis/v1/api/kazne/vozilo/1"
+curl -X GET -H "Accept: application/json" "http://localhost:8080/nwtis/v1/api/kaznevozilo/1?od=1711368000&do=1711369000"
+curl -I -H "Accept: application/json" "http://localhost:8080/nwtis/v1/api/kazne"

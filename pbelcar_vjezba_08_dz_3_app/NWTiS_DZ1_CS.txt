@@ -1,0 +1,9 @@
+#NWTiS 2024.
+#Thu Mar 07 10:23:41 CET 2024
+mreznaVrataRadara=8000
+mreznaVrataVozila=8001
+maksVozila=5
+#ako se koristi pbelcar_vjezba_08_dz_3_mikroservisi
+webservis.vozila.baseuri=http://20.24.5.5:7070/
+#ako se koristi pbelcar_vjezba_08_dz_3_servisi
+#webservis.vozila.baseuri=http://20.24.5.3:8080/pbelcar_vjezba_08_dz_3_servisi/

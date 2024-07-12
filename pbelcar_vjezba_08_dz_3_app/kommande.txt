@@ -1,0 +1,5 @@
+# Start central system
+java -cp pbelcar_vjezba_08_dz_3_app/target/pbelcar_vjezba_08_dz_3_app-1.1.0-jar-with-dependencies.jar edu.unizg.foi.nwtis.pbelcar.vjezba_07_dz_2.posluzitelji.CentralniSustav pbelcar_vjezba_08_dz_3_app/NWTiS_DZ1_CS.txt
+
+# Start kazne
+java -cp pbelcar_vjezba_08_dz_3_app/target/pbelcar_vjezba_08_dz_3_app-1.1.0-jar-with-dependencies.jar edu.unizg.foi.nwtis.pbelcar.vjezba_07_dz_2.posluzitelji.PosluziteljKazni pbelcar_vjezba_08_dz_3_app/NWTiS_DZ1_PK.txt

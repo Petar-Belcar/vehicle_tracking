@@ -1,0 +1,10 @@
+FROM amazoncorretto:22-jdk
+
+EXPOSE 7070
+
+WORKDIR /app
+
+COPY pbelcar_vjezba_08_dz_3_mikroservisi/target /app/
+
+
+CMD ["java", "-jar", "pbelcar_vjezba_08_dz_3_mikroservisi.jar"]

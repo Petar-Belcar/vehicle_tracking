@@ -1,0 +1,14 @@
+#NWTiS 2024.
+#Thu Mar 07 10:23:41 CET 2024
+id=2
+adresaRegistracije=20.24.5.2
+mreznaVrataRegistracije=8000
+mreznaVrataRadara=8011
+adresaKazne=20.24.5.2
+mreznaVrataKazne=8020
+maksBrzina=24
+maksTrajanje=10
+maksUdaljenost=200
+adresaRadara=Zagrebacka 157, 42000 Varazdin
+gpsSirina=46.28569
+gpsDuzina=16.34735

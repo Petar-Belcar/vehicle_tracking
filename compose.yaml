@@ -1,0 +1,110 @@
+version: '3'
+
+name: pbelcar_vjezba_08_dz_3_docker_compose
+
+networks:
+  nwtis:
+    name: nwtis
+    driver: bridge
+    #external: true
+    ipam:
+      config:
+        - subnet: 20.24.5.0/24
+          gateway: 20.24.5.1
+
+volumes:
+  h2:
+    name: h2nwtis
+    #external: true
+
+services:
+  h2:
+    image: h2
+    container_name: h2
+    build:
+      dockerfile: ./Dockerfile.h2
+    volumes:
+    - h2:/opt/database
+    # Moze se ukljuciti za debugiranje
+    # ports:
+    # - 9092:9092
+    restart: unless-stopped
+    networks:
+      nwtis:
+        ipv4_address: 20.24.5.4
+  app:
+    image: app
+    container_name: app
+    build:
+      dockerfile: ./Dockerfile.app
+    # Moze se ukljuciti za debugiranje
+    # ports:
+    # - 8000:8000
+    # - 8001:8001
+    # - 8020:8020
+    restart: unless-stopped
+    networks:
+      nwtis:
+        ipv4_address: 20.24.5.2
+  servisi:
+    image: servis
+    container_name: servis
+    build:
+      dockerfile: ./Dockerfile.servisi
+    ports:
+    - 8080:8080
+    - 4848:4848
+    restart: unless-stopped
+    networks:
+      nwtis:
+        ipv4_address: 20.24.5.3
+    depends_on:
+    - h2
+    - app
+  mikroservisi:
+    image: mikroservisi
+    container_name: mikroservisi
+    build:
+      dockerfile: ./Dockerfile.mikroservisi
+    #ports:
+    #- 7070:7070
+    restart: unless-stopped
+    networks:
+      nwtis:
+        ipv4_address: 20.24.5.5
+    depends_on:
+    - h2
+    - app
+  radar1:
+    image: radar1
+    container_name: radar1
+    build:
+      dockerfile: ./Dockerfile.radar1
+    restart: unless-stopped
+    networks:
+      nwtis:
+        ipv4_address: 20.24.5.10
+    depends_on:
+    - app
+  radar2:
+    image: radar2
+    container_name: radar2
+    build:
+      dockerfile: ./Dockerfile.radar2
+    restart: unless-stopped
+    networks:
+      nwtis:
+        ipv4_address: 20.24.5.11
+    depends_on:
+    - app
+  radar3:
+    image: radar3
+    container_name: radar3
+    build:
+      dockerfile: ./Dockerfile.radar3
+    restart: unless-stopped
+    networks:
+      nwtis:
+        ipv4_address: 20.24.5.12
+    depends_on:
+    - app

@@ -1,0 +1,6 @@
+#NWTiS 2024.
+#Thu Mar 07 10:23:41 CET 2024
+#
+adresaRegistracije=20.24.5.2
+mreznaVrataRegistracije=8000
+#
